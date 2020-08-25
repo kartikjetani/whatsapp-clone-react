@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState,createContext } from 'react';
 import './App.css';
+import Leftpanel from './Components/Leftpanel';
+import Rightchat from './Components/Rightchat';
+// import connect from '/connect.png';
+import { BrowserRouter, Route, Switch,Redirect } from 'react-router-dom'
+import InitialRight from './Components/InitialRight';
+import Login from "./Components/Login"
+
+
+const User = createContext();
 
 function App() {
+  
+  const [user, setuser] = useState("")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <User.Provider value={{ user, setuser }}>
+    <div className="App"> 
+      <BrowserRouter>
+        <Switch>
+         
+          <Route exact path="/" >
+            {
+              (!user) ?<> <Redirect to="/"  /> <Login /></> :
+                <>
+                    <Leftpanel context={user}/>
+                    <InitialRight />
+                </>
+            }
+
+            </Route>
+            <Route path="/rooms/:roomId" >
+            {(!user) ?<> <Redirect to="/"  /> <Login /></> :
+                <>
+                <Leftpanel />
+              <Rightchat context={user} />
+              <Login/>
+                </>}
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      </div>
+      </User.Provider>
   );
 }
 
 export default App;
+export { User };

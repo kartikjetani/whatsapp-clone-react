@@ -1,0 +1,27 @@
+.Login_container{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6dbd8;
+    margin: auto;
+}
+
+.Login_container>img{
+    height: 200px;
+    width: 200px;
+    padding-bottom: 20px;
+}
+.Login_container>*{
+    padding: 15px;
+}
+.Login_container>Button{
+    background-color: #3ec450;
+    color: white;
+}
+
+.Login_container>Button:hover{
+    color: gray;
+}

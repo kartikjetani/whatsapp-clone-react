@@ -1,0 +1,155 @@
+.Rightchat{
+    background:url("/bg_chat.png")  ;
+    background-size: contain;
+    background-attachment: fixed;
+    height: 100vh;
+    width:70vw;
+}
+.rightchat_header{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding-left: 10px;
+    padding: 10px;
+    background-color: #ededed;
+}
+.Header_title{
+    padding-left: 20px;
+}
+.rightchat_header>.MuiSvgIcon-root{
+    margin: 0 10px;
+    font-size: 50px;
+}
+
+.right_icon{
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: inherit;
+    min-width:200px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.right_icon>button:nth-child(2){
+    transform: rotate(45deg);
+}
+
+.type_msg_container{
+    display: flex;
+    background-color: #d4d4d4;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    position:sticky;
+    margin-bottom: 0;
+    bottom: 0;
+}
+.type_bar{
+    background-color: white;
+    height: 47px;
+    padding-left: 10px;
+    width: 87%;
+    border-radius: 30px;
+    display: flex;
+}
+.type_bar>form{
+    width: 100%;
+}
+.type_bar>form>input{
+    margin-left: 10px;
+    border: none;
+    outline:none;
+    width: 87%;
+    height: 100%;
+}
+.type_bar>form>.MuiIconButton-root{
+    margin-right: 0px;
+    position: absolute;
+}
+
+
+/* Main Chat */
+.MainChat_container{
+    overflow-y: auto;
+    height:80vh;
+}
+
+.MainChat{
+    background-color: #dcf8c6;
+    border-radius: 5px;
+    display: flex;
+    width: fit-content;
+     max-width: 30%;
+     padding: 10px;
+    margin:10px 20px 10px auto;
+    position: relative;
+    color: black;
+}
+
+.MainChat::after{
+    content: " ";
+    background-color: #dcf8c6;
+    top:0px;
+    right:-15px;
+    position:absolute;
+    height: 20px;
+    width: 20px;
+    clip-path: polygon(0 0, 100% 0, 23% 100%, 0 100%);
+}
+
+.chat_receive{
+    background-color: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    width: fit-content;
+     max-width: 30%;
+    margin:18px auto 10px 20px;
+    position: relative;
+    color: black;
+
+}
+
+.chat_receive>span,.MainChat>span{
+    color: green ;
+    font-size: x-small;
+    position: absolute;
+    top:-15px;
+    font-weight: 500;
+
+}
+.chat_receive>small,.MainChat>small{
+    color: grey;
+    font-size: x-small;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    height: fit-content;
+    bottom: 0px;
+}
+
+.chat_receive,.MainChat{
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* --------------Initial_right -----------------*/
+
+.Initial_right{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #f8f9fa;
+    align-items: center;
+    flex-direction: column;
+    color: gray;
+}
+.Initial_right>img{
+    margin:70px auto;
+}
+
+.Initial_right>p{
+    text-align: center;
+    margin: 20px;
+}
+
